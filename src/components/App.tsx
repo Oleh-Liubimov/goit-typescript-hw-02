@@ -27,17 +27,17 @@ function App() {
         setLoading(true);
         setError(false);
         const data = await fetchImagesWithQuery({ query, page });
-        if (data.data.total === 0) {
+        if (data.total === 0) {
           setError(true);
         }
-        if (page > Math.ceil(data.data.total_pages / perPage)) {
+        if (page > Math.ceil(data.total_pages / perPage)) {
           const endOfCollection = () =>
             toast("Sorry, but you've reached the end of search results");
           endOfCollection();
           return;
         }
-        setImages((i) => [...i, ...data.data.results]);
-        setTotalPages(data.data.total_pages);
+        setImages((i) => [...i, ...data.results]);
+        setTotalPages(data.total_pages);
       } catch (error) {
         setError(true);
       } finally {
