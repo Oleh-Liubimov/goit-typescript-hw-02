@@ -18,7 +18,6 @@ function App() {
   const [query, setQuery] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [imgUrl, setImgUrl] = useState<string>("");
-  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     if (!query) return;
@@ -37,7 +36,6 @@ function App() {
           return;
         }
         setImages((i) => [...i, ...data.results]);
-        setTotalPages(data.total_pages);
       } catch (error) {
         setError(true);
       } finally {
