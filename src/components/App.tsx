@@ -8,9 +8,10 @@ import fetchImagesWithQuery from "../search-api";
 import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./ImageModal/ImageModal";
 import { perPage } from "../search-api";
+import { Image } from "./ImageGallery/ImageGalleryTypes";
  
 function App() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Image[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);

@@ -1,11 +1,13 @@
-export interface Item{
+ export interface Image{
     id: string;
-    [key: string]:
-
+    urls: {
+        small: string;
+        regular: string;
+    }
+    likes:number
 }
 
-
 export interface IGProps {
-    data: object[];
-    onImgClick: () => void
+    data: Image[];
+    onImgClick: (urls:string) => void
 }

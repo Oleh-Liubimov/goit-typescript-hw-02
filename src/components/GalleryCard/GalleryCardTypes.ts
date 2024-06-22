@@ -8,7 +8,7 @@ interface Data{
     likes:number
 }
 
-export interface PropsType{
+export interface GCProps{
     data: Data;
     onImgClick: (urls:string) => void
 }

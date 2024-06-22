@@ -1,5 +1,5 @@
-import { PropsType } from "./GalleryCardTypes";
-export default function GalleryCard({ data: { urls, likes }, onImgClick }:PropsType) {
+import { GCProps} from "./GalleryCardTypes";
+export default function GalleryCard({ data: { urls, likes }, onImgClick }:GCProps) {
   return (
     <div>
       <img
