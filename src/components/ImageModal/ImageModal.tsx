@@ -1,8 +1,9 @@
-/* eslint-disable react/prop-types */
-import Modal from "react-modal";
+
+import Modal from 'react-modal';
+import { IMProps } from './ImageModalTypes';
 Modal.setAppElement("#root");
 
-export default function ImageModal({ imgUrl, isOpen, onClose }) {
+export default function ImageModal({ imgUrl, isOpen, onClose }:IMProps) {
   return (
     <Modal
       isOpen={isOpen}
