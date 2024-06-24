@@ -17,6 +17,6 @@ interface R {
 axios.defaults.baseURL = "https://api.unsplash.com/";
 
 export default async function fetchImagesWithQuery({ query, page }:searchParams):Promise<R> {
-    const response = await axios.get(`/search/photos?client_id=${key}&page=${page}&per_page=${perPage}&query=${query}`);    
+    const response = await axios.get<R>(`/search/photos?client_id=${key}&page=${page}&per_page=${perPage}&query=${query}`);    
     return response.data;
 }
